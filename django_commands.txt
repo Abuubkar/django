@@ -1,0 +1,8 @@
+#creating project
+django-admin startproject [project name]
+
+#creating app
+python manage.py startapp [app name]
+
+#to run app
+python manage.py runserver 
