@@ -6,21 +6,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All meetups</title>
+    <link rel="icon"href="{% static 'favicon.ico' %}">
     <link rel="stylesheet" href="{% static 'meetups/style/base.css' %}">
+    <link rel="stylesheet" href="{% static 'meetups/style/all_meetups.css' %}">
 </head>
 <body>
-    <h1>All Meetups</h1>
-    <p> Hello World</p>
-    {% if show_meetups %}
-    {% for meetup_item in meetups %}
-        <!-- Interpolation syntax -->
-    <p>{{meetup_item.title}}</p>
-    {% endfor %}
-    {% else%}
     
-        <!-- Interpolation syntax -->
-    <p> 'No Meetups Found'</p>
-    {% endif %}
+    <header id="main-header">
+        <nav><a href="/meetups/" id="main-logo">DjangoMeetups</a></nav>
+        <h1>We got great meetups coming up!</h1>
+        <p>Find the one that best suites your needs!</p>
+    </header>
     
+    <main>
+        <section>
+            <h2> Upcoming Meetups </h2>
+            <ol>
+                {% if show_meetups %}
+                {% for meetup_item in meetups %}
+                <li class="meetup-item">
+                    <article>
+                        <div class="meetup-summary">
+                            <div class="meetup-image">
+                                <img src="" alt="">
+                            </div>
+                            <div class="meetup-details">
+                                <!-- Interpolation syntax -->
+                                <h3>{{ meetup_item.title }}</h3>
+                                <address>{{ meetup_item.location }}</address>
+                            </div>
+                        </div>
+                        <div class="meetup-actions">
+                            <a href="" class="btn"> More Details</a>
+                        </div>
+                    </article>
+                </li>
+                {% endfor %}
+                {% else%}
+                <p> 'No Meetups Found'</p>
+                {% endif %}
+            </ol>
+        </section>
+    </main>
+
 </body>
 </html>
