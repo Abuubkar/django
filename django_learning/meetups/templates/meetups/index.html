@@ -37,7 +37,12 @@
                             </div>
                         </div>
                         <div class="meetup-actions">
-                            <a href="" class="btn"> More Details</a>
+                            <!-- <a href="{{ meetup_item.slug }}" class="btn"> More Details</a> -->
+                            <a href="{% url 'meetup_details' meetup_item.slug %}" class="btn"> More Details</a>
+                            <!-- no need to update url in every page
+                            url [url name] [spaced parameters]
+                            -->
+
                         </div>
                     </article>
                 </li>

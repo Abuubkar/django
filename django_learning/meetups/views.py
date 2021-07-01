@@ -21,5 +21,16 @@ def index(request):
         'show_meetups':True,
         'meetups':meetups
     }) 
-
     # return HttpResponse('Hello World!');
+
+def meetup_details(request, meetup_slug):
+    print(meetup_slug)
+    selected_meetup = {
+        'title': 'A First Meetup', 
+        'description': 'This is the first meetup!'
+        }
+    return render(request, 'meetups/meetup-details.html',{
+        'meetup_title': selected_meetup['title'],
+        'meetup_desccription': selected_meetup['description']
+        })
+    
