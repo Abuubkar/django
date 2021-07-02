@@ -1,39 +1,35 @@
+{% extends 'meetups/base/base.html'%}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'meetups/style/base.css' %}">
+
+{% block site_css %}
     <link rel="stylesheet" href="{% static 'meetups/style/meetup_detail.css' %}">
+{% endblock %}
 
-    <title>{{ meetup_title }}</title>
-</head>
-<body>
-    <main>
-        <article>
-            <img src="" alt="">
+{% block main_heading %} 
+    {{ meetup_title }} 
+{% endblock %}
 
-            <section id="location">
-                <h2>Meetup Location</h2>
-                <address>This meetup takes place in <span>LOCATION</span> (ADDRESS) </address>
-            </section>
-            <section id="details">
-                <h2>What's this meetup about?</h2>
-                <p>{{ meetup_description }}</p>
+{% block body %}
+    <article>
+        <img src="" alt="">
 
-                <footer>
-                    <p>
-                        Need more details? Please <a href="">contact the  organizer</a>
-                    </p></footer>
-            </section>
+        <section id="location">
+            <h2>Meetup Location</h2>
+            <address>This meetup takes place in <span>LOCATION</span> (ADDRESS) </address>
+        </section>
+        <section id="details">
+            <h2>What's this meetup about?</h2>
+            <p>{{ meetup_description }}</p>
 
-            <section id="registration">
-                <h2>Join us!</h2>
-                FORM HERE
-            </section>
-        </article>
-    </main>
-</body>
-</html>
+            <footer>
+                <p>
+                    Need more details? Please <a href="">contact the  organizer</a>
+                </p></footer>
+        </section>
+
+        <section id="registration">
+            <h2>Join us!</h2>
+            FORM HERE
+        </section>
+    </article>
+{% endblock %}

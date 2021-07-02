@@ -17,8 +17,8 @@ from django.urls import path
 
 from . import views
 
-from django.views.generic.base import RedirectView
-from django.contrib.staticfiles.storage import staticfiles_storage
+# from django.views.generic.base import RedirectView
+# from django.contrib.staticfiles.storage import staticfiles_storage
 
 urlpatterns = [
     path('meetups/', views.index, name= 'all_meetups'), # our-domain.com/meetups
