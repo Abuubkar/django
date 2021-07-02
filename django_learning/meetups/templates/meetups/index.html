@@ -24,7 +24,7 @@
                 {% if show_meetups %}
                 {% for meetup_item in meetups %}
 
-                    {% include 'meetups/includes/meetup_item.html' %}
+                    {% include 'meetups/includes/meetup_item.html' with title=meetup_item.title location=meetup_item.location %}
 
                 {% endfor %}
                 {% else%}
