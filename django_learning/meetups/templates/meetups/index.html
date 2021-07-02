@@ -23,28 +23,9 @@
             <ol>
                 {% if show_meetups %}
                 {% for meetup_item in meetups %}
-                <li class="meetup-item">
-                    <article>
-                        <div class="meetup-summary">
-                            <div class="meetup-image">
-                                <img src="" alt="">
-                            </div>
-                            <div class="meetup-details">
-                                <!-- Interpolation syntax -->
-                                <h3>{{ meetup_item.title }}</h3>
-                                <address>{{ meetup_item.location }}</address>
-                            </div>
-                        </div>
-                        <div class="meetup-actions">
-                            <!-- <a href="{{ meetup_item.slug }}" class="btn"> More Details</a> -->
-                            <a href="{% url 'meetup_details' meetup_item.slug %}" class="btn"> More Details</a>
-                            <!-- no need to update url in every page
-                            url [url name] [spaced parameters]
-                            -->
 
-                        </div>
-                    </article>
-                </li>
+                    {% include 'meetups/includes/meetup_item.html' %}
+
                 {% endfor %}
                 {% else%}
                 <p> 'No Meetups Found'</p>
