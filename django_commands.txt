@@ -12,3 +12,6 @@ python manage.py makemigrations
 
 #to apply the migration which was created by _makemigration_
 python manage.py migrate
+
+#to create user for admin pannel
+python manage.py createsuperuser
