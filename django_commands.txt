@@ -6,3 +6,9 @@ python manage.py startapp [app name]
 
 #to run app
 python manage.py runserver 
+
+#to generate db instructions for class in models.py etc
+python manage.py makemigrations
+
+#to apply the migration which was created by _makemigration_
+python manage.py migrate
