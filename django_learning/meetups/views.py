@@ -16,13 +16,12 @@ def index(request):
     # return HttpResponse('Hello World!');
 
 def meetup_details(request, meetup_slug):
-    print(meetup_slug)
-    selected_meetup = {
-        'title': 'A First Meetup', 
-        'description': 'This is the first meetup!'
-        }
-    return render(request, 'meetups/meetup-details.html',{
-        'meetup_title': selected_meetup['title'],
-        'meetup_desccription': selected_meetup['description']
-        })
-    
+    try:
+        selected_meetup = Meetup.objects.get(slug=meetup_slug)
+        return render(request, 'meetups/meetup-details.html',{
+            'meetup_found': True,
+            'meetup_title': selected_meetup.title,
+            'meetup_desccription': selected_meetup.description
+            })
+    except Exception as err:
+        return render(request, "meetups/meetup-details.html",{'meetup_found': False},)
